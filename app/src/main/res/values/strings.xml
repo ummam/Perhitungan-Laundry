@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LaundryAssesment</string>
+    <string name="laundry">Ummam Laundry</string>
+    <string name="paketBulanan">Paket Bulanan</string>
+    <string name="penjelasan">Aplikasi Laundry untuk Menghitung harga laundr satu bulan dengan Berat cucian 20 Kg perbulan</string>
+    <string name="total">%1$</string>
+    <string name="harga">Harga</string>
+    <string name="TotalHarga">Total Harga</string>
+    <string name="bulanan_invalid">Isi Paket Tidak Boleh Kosong</string>
+</resources>
