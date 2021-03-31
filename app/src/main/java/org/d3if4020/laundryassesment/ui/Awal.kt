@@ -17,6 +17,7 @@ class Awal : Fragment() {
         binding = FragmentAwalBinding.inflate(
                 layoutInflater, container, false)
         binding.button.setOnClickListener { hitungHarga() }
+        binding.hasilTextView.text = getString(R.string.TotalHarga)
         return binding.root
     }
     private fun hitungHarga() {
