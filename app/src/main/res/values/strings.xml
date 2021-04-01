@@ -11,5 +11,12 @@
     Kami Harap Bapak/Ibu Puas dengan layanan kami.\n\n
     contact :\n
     wa    : 08222222222\n
-    ig    : @laundry</string>>
+    ig    : @laundry</string>
+    <string name="next">Next</string>
+    <string name="copyright">Aplikasi Laundry ini merupakan  aplikasi Android dari Ummam Laundry untuk  menghitung Harga dari berapa bulan pelanggan akan berlangganan laundry pakaian.
+        \nTemukan kode aplikasi di https://github.com/ummam/Perhitungan-Laundry.git
+        \n\nMochammad Chairu Ummam</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="bagikan">SHARE</string>
+    <string name="bagikan_template">Harga Paket dengan langganan %1$s bulan dengan harga Laundry = %2$s jangan lupa mampir di @Ummam Laundry</string>>
 </resources>
