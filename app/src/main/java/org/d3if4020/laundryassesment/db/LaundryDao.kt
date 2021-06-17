@@ -11,4 +11,7 @@ interface LaundryDao {
     fun insert(laundry: LaundryEntity)
     @Query("SELECT * FROM laundry ORDER BY id DESC")
     fun getLastLaundry(): LiveData<List<LaundryEntity?>>
+
+    @Query("DELETE FROM laundry")
+    fun clearData()
 }

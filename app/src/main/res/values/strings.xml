@@ -22,4 +22,9 @@
     <string name="belum_ada_data">Belum ada data</string>
     <string name="history">History</string>
     <string name="bulanan_x">Bulanan: %1$.0f</string>
+    <string name="hapus_histori">Hapus Histori</string>
+    <string name="konfirmasi_hapus">Hapus semua histori?</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
+
 </resources>
