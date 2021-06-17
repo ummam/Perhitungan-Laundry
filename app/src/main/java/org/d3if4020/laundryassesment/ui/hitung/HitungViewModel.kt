@@ -8,6 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.d3if4020.laundryassesment.data.HasilLaundry
+import org.d3if4020.laundryassesment.data.HitungLaundry
 import org.d3if4020.laundryassesment.db.LaundryDao
 import org.d3if4020.laundryassesment.db.LaundryEntity
 
@@ -16,15 +17,13 @@ class HitungViewModel(private val db: LaundryDao) : ViewModel() {
 
 
     fun hitungHarga(bulanan: String) {
-        val hasil = 25 * 6000 * bulanan.toFloat()
 
-        hasilLaundry.value = HasilLaundry(hasil)
-
+        val dataLaundry = LaundryEntity(
+            bulanan = bulanan.toFloat()
+        )
+        hasilLaundry.value = HitungLaundry.hitung(dataLaundry)
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
-                val dataLaundry = LaundryEntity(
-                    bulanan = bulanan.toFloat()
-                )
                 db.insert(dataLaundry)
             }
         }
