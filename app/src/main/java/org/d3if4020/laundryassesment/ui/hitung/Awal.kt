@@ -1,4 +1,4 @@
-package org.d3if4020.laundryassesment.ui
+package org.d3if4020.laundryassesment.ui.hitung
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,12 +6,16 @@ import android.text.TextUtils
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import org.d3if4020.laundryassesment.R
 import org.d3if4020.laundryassesment.databinding.FragmentAwalBinding
+import org.d3if4020.laundryassesment.ui.hitung.HitungViewModel
 
 class Awal : Fragment() {
+    private val viewModel: HitungViewModel by viewModels()
     private lateinit var binding: FragmentAwalBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -45,11 +49,7 @@ class Awal : Fragment() {
             Toast.makeText(context, R.string.bulanan_invalid, Toast.LENGTH_LONG).show()
             return
         }
-        val hasil = 25 * 6000 * bulanan.toInt()
-
-        binding.hasilTextView.text = getString(R.string.TotalHarga)
-        binding.laundryTextView.text = hasil.toString()
-        binding.buttonGroup.visibility = View.VISIBLE
+        viewModel.hitungHarga(bulanan)
     }
     private fun shareData() {
         val message = getString(R.string.bagikan_template,
@@ -64,4 +64,13 @@ class Awal : Fragment() {
         }
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.getHasilLaundry().observe(viewLifecycleOwner,{
+            if (it == null) return@observe
+            binding.laundryTextView.text = getString(R.string.total, it.hasil)
+            binding.buttonGroup.visibility = View.VISIBLE
+        })
+    }
 }

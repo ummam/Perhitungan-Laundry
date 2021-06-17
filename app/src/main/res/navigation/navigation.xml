@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/awal"
-        android:name="org.d3if4020.laundryassesment.ui.Awal"
+        android:name="org.d3if4020.laundryassesment.ui.hitung.Awal"
         android:label="Awal"
         tools:layout="@layout/fragment_awal">
         <action
