@@ -10,5 +10,5 @@ interface LaundryDao {
     @Insert
     fun insert(laundry: LaundryEntity)
     @Query("SELECT * FROM laundry ORDER BY id DESC LIMIT 1")
-    fun getLastBmi(): LiveData<LaundryEntity?>
+    fun getLastLaundry(): LiveData<LaundryEntity?>
 }
