@@ -18,5 +18,7 @@
         \n\nMochammad Chairu Ummam</string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
     <string name="bagikan">SHARE</string>
-    <string name="bagikan_template">Harga Paket dengan langganan %1$s bulan dengan harga Laundry = %2$s jangan lupa mampir di @Ummam Laundry</string>>
+    <string name="bagikan_template">Harga Paket dengan langganan %1$s bulan dengan harga Laundry = %2$s jangan lupa mampir di @Ummam Laundry</string>
+    <string name="belum_ada_data">Belum ada data</string>
+    <string name="history">History</string>>
 </resources>

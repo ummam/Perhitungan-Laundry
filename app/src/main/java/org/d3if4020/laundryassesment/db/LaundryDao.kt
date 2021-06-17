@@ -9,6 +9,6 @@ import androidx.room.Query
 interface LaundryDao {
     @Insert
     fun insert(laundry: LaundryEntity)
-    @Query("SELECT * FROM laundry ORDER BY id DESC LIMIT 1")
-    fun getLastLaundry(): LiveData<LaundryEntity?>
+    @Query("SELECT * FROM laundry ORDER BY id DESC")
+    fun getLastLaundry(): LiveData<List<LaundryEntity?>>
 }

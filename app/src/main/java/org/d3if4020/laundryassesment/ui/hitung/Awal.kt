@@ -43,10 +43,15 @@ class Awal : Fragment() {
         inflater.inflate(R.menu.options, menu)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_about) {
-            findNavController().navigate(
-                R.id.action_awal_to_aboutFragment)
-            return true
+        when(item.itemId) {
+            R.id.menu_histori -> {
+                findNavController().navigate(R.id.action_awal_to_historiFragment)
+                return true
+            }
+            R.id.menu_about -> {
+                findNavController().navigate(R.id.action_awal_to_aboutFragment)
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -79,10 +84,5 @@ class Awal : Fragment() {
             binding.laundryTextView.text = getString(R.string.total, it.hasil)
             binding.buttonGroup.visibility = View.VISIBLE
         })
-        viewModel.data.observe(viewLifecycleOwner, {
-            if (it == null) return@observe
-            Log.d("HitungFragment", "Data tersimpan. ID = ${it.id}")
-        })
-
     }
 }

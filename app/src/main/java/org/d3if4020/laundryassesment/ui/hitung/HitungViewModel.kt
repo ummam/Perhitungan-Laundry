@@ -14,7 +14,6 @@ import org.d3if4020.laundryassesment.db.LaundryEntity
 class HitungViewModel(private val db: LaundryDao) : ViewModel() {
     private val hasilLaundry = MutableLiveData<HasilLaundry?>()
 
-    val data = db.getLastLaundry()
 
     fun hitungHarga(bulanan: String) {
         val hasil = 25 * 6000 * bulanan.toFloat()
